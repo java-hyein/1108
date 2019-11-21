@@ -19,9 +19,6 @@ public class Location {
 		if(next.equals("그만"))
 			break;
 		
-		
-		//System.out.println(next+" "+ a +" " + b);
-		
 		}
 	}
 
