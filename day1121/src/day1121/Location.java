@@ -16,6 +16,7 @@ public class Location {
 		int a = scan.nextInt();
 		int b = scan.nextInt();
 		
+		
 		if(next.equals("그만"))
 			break;
 		
