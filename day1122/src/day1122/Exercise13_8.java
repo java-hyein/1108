@@ -1,3 +1,5 @@
+package day1122;
+
 import java.util.Scanner;
 import java.util.Vector;
 
