@@ -13,7 +13,7 @@ public class MakeClientSocket {
 
 	public MakeClientSocket() {
 		try {
-			socket = new Socket("192.168.6.9", 2000); // 로컬호스트(자기를 나타냄), 서버 번호와 맞춤
+			socket = new Socket("localhost", 1201); // 로컬호스트(자기를 나타냄), 서버 번호와 맞춤
 			writer = new PrintWriter(socket.getOutputStream(), true); // 클라이언트로 보내는 쪽
 			reader = new BufferedReader(new InputStreamReader(socket.getInputStream())); // 가져오는 쪽
 
