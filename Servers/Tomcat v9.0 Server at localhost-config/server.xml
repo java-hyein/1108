@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="jsp_test" path="/jsp_test" reloadable="true" source="org.eclipse.jst.jee.server:jsp_test"/><Context docBase="jsp_audio" path="/jsp_audio" reloadable="true" source="org.eclipse.jst.jee.server:jsp_audio"/><Context docBase="jsp_hello" path="/jsp_hello" reloadable="true" source="org.eclipse.jst.jee.server:jsp_hello"/><Context docBase="jsp_servlet" path="/jsp_servlet" reloadable="true" source="org.eclipse.jst.jee.server:jsp_servlet"/><Context docBase="jsp_servlet_hello" path="/jsp_servlet_hello" reloadable="true" source="org.eclipse.jst.jee.server:jsp_servlet_hello"/></Host>
+      <Context docBase="jsp_test" path="/jsp_test" reloadable="true" source="org.eclipse.jst.jee.server:jsp_test"/><Context docBase="jsp_audio" path="/jsp_audio" reloadable="true" source="org.eclipse.jst.jee.server:jsp_audio"/><Context docBase="jsp_hello" path="/jsp_hello" reloadable="true" source="org.eclipse.jst.jee.server:jsp_hello"/><Context docBase="jsp_servlet" path="/jsp_servlet" reloadable="true" source="org.eclipse.jst.jee.server:jsp_servlet"/><Context docBase="jsp_servlet_hello" path="/jsp_servlet_hello" reloadable="true" source="org.eclipse.jst.jee.server:jsp_servlet_hello"/><Context docBase="jsp_doPost" path="/jsp_doPost" reloadable="true" source="org.eclipse.jst.jee.server:jsp_doPost"/><Context docBase="jsp_script" path="/jsp_script" reloadable="true" source="org.eclipse.jst.jee.server:jsp_script"/></Host>
     </Engine>
   </Service>
 </Server>
