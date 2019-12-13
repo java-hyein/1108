@@ -17,18 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 public class FormEx extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public FormEx() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("doGet");
@@ -52,10 +44,6 @@ public class FormEx extends HttpServlet {
 		writer.println("</body></html>");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	// submit 하게 되면 request로 들어온다. 여기서는 꺼내는 행위를 함
 	protected void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doPost");
