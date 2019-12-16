@@ -27,24 +27,33 @@
 		
 	%>
 	
-	이름 : <%=name %><br>
-	성별 : <%=sex %><br>
-	아이디 : <%=id %><br>
-	비밀번호 : <%=pw1 %><br>
+	이름 :       <%=name %><br>
+	<hr>
+	성별 :       <%=sex %><br>
+	<hr>
+	아이디 :      <%=id %><br>
+	<hr>
+	비밀번호 :    <%=pw1 %><br>
+	<hr>
 	비밀번호 확인 : <%=pw2 %><br>
-	주소 : <%=addr %><br>
-	전화번호 : <%=tel %><br>
-	이메일 주소 : <%=email %><br>
+	<hr>
+	주소 :       <%=addr %><br>
+	<hr>
+	전화번호 :    <%=tel %><br>
+	<hr>
+	이메일 주소 :  <%=email %><br>
+	<hr>
 		
-	취미 :
+	취미 :<br>
+	<table border="1">
 	<% if(request.getParameterValues("hobby") == null){
-		out.println("선택한 취미가 없습니다.");
+		out.println("[선택한 취미가 없습니다.]");
 	}else{
-		out.println(Arrays.toString(hobby));
+		for(int i = 0; i < hobby.length;i++) {
+		out.println("<tr><td>"+hobby[i]+"</td></tr>");
+		}
 	}
-	
 	%>
-	
-
+	</table>
 </body>
 </html>
