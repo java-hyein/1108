@@ -95,4 +95,148 @@ public class BDao {
 		}
 		return dtos;
 	}
+	public BDto contentView(String strId) {
+		
+		upHit(strId);
+		//dto 한개 = 게시판 글 1개
+		BDto dto = null;
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs= null;
+		
+		try {
+			con = ds.getConnection();
+
+			String query ="select * from mvc_board where bId = ?";
+			pstmt = con.prepareStatement(query);
+			// 문자를 숫자로! 
+			pstmt.setInt(1, Integer.parseInt(strId));
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				int bId = rs.getInt("bId");
+				String bName = rs.getString("bName");
+				String bTitle = rs.getString("bTitle");
+				String bContent = rs.getString("bContent");
+				Timestamp bDate = rs.getTimestamp("bDate");
+				int bHit = rs.getInt("bHit");
+				int bGroup = rs.getInt("bGroup");
+				int bStep = rs.getInt("bStep");
+				int bIndent = rs.getInt("bIndent");
+				
+				dto = new BDto(bId, bName, bTitle, bContent, bDate,bHit, bGroup,bStep, bIndent);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(con != null) con.close();
+				
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return dto;
+	}
+	public void modifyView(String bId,String bName, String bTitle, String bContent) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+
+		
+		try {
+			con = ds.getConnection();
+
+			String query ="update mvc_board set bName = ?, bTitle =  ?, bContent =  ? where bId = ?";
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, bName);
+			pstmt.setString(2, bTitle);
+			pstmt.setString(3, bContent);
+			pstmt.setInt(4, Integer.parseInt(bId));
+			
+			int up = pstmt.executeUpdate();
+			
+			if(up == 1) {
+				System.out.println("okay");
+			}else {
+				System.out.println("fail");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(con != null) con.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		
+	}
+	public void delete(String bId) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+
+		
+		try {
+			con = ds.getConnection();
+
+			String query ="delete from mvc_board where bId = ?";
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, Integer.parseInt(bId));
+			
+			int up = pstmt.executeUpdate();
+			
+			if(up == 1) {
+				System.out.println("okay");
+			}else {
+				System.out.println("fail");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(con != null) con.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
+	
+	public void upHit(String bId) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+
+		
+		try {
+			con = ds.getConnection();
+
+			String query ="update mvc_board set bHit = bHit+1 where bId = ?";
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, Integer.parseInt(bId));
+			
+			int up = pstmt.executeUpdate();
+			
+			if(up == 1) {
+				System.out.println("okay");
+			}else {
+				System.out.println("fail");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(con != null) con.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
 }

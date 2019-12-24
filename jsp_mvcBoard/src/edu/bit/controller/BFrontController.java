@@ -10,8 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.bit.command.BCommand;
+import edu.bit.command.BDeleteCommand;
 import edu.bit.command.BListCommand;
 import edu.bit.command.BWriteCommand;
+import edu.bit.command.BcontentCommand;
+import edu.bit.command.BmodifyCommand;
 
 /**
  * Servlet implementation class BFrontController
@@ -50,7 +53,7 @@ public class BFrontController extends HttpServlet {
 		request.setCharacterEncoding("EUC-KR"); // 한글처리
 		
 		String viewPage = null;
-		BCommand command = null;
+		BCommand command = null; // command - 일을 시킨다 
 		
 		String uri = request.getRequestURI();
 		String conPath = request.getContextPath(); // 패키지 명 
@@ -75,7 +78,28 @@ public class BFrontController extends HttpServlet {
 			command.execute(request, response);
 			
 			viewPage = "list.jsp";
+			
+		}else if (com.equals("/content_view.do")) {
+			
+			command = new BcontentCommand();
+			command.execute(request, response);
+			
+			viewPage = "content_view.jsp";
+			
+		}else if (com.equals("/modify.do")) {
+			command = new BmodifyCommand();
+			command.execute(request, response);
+		
+			viewPage = "list.do";
+		}else if (com.equals("/delete.do")) {
+			command = new BDeleteCommand();
+			command.execute(request, response);
+		
+			viewPage = "list.do";
 		}
+		
+		
+		
 		// 받은 요청을 유저에게 보여준다.
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request,response);

@@ -18,8 +18,11 @@
 			<td>날짜</td>
 			<td>히트</td>
 		</tr>
+		<!-- items="${list}" : request.setAttribute("list", dtos); 에서 온 것 
+		 변수 dto-->
 		<c:forEach items="${list}" var="dto">
 		<tr>
+			<!-- dto.getbId -->
 			<td>${dto.bId}</td>
 			<td>${dto.bName}</td>
 			<td>
