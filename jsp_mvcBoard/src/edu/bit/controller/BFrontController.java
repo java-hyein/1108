@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.bit.command.BCommand;
+import edu.bit.command.BDReplyCommand;
+import edu.bit.command.BDReplyViewCommand;
 import edu.bit.command.BDeleteCommand;
 import edu.bit.command.BListCommand;
 import edu.bit.command.BWriteCommand;
@@ -93,6 +95,18 @@ public class BFrontController extends HttpServlet {
 			viewPage = "list.do";
 		}else if (com.equals("/delete.do")) {
 			command = new BDeleteCommand();
+			command.execute(request, response);
+		
+			viewPage = "list.do";
+			
+		}else if (com.equals("/reply_view.do")) {
+			command = new BDReplyViewCommand();
+			command.execute(request, response);
+		
+			viewPage = "reply_view.jsp";
+			
+		}else if (com.equals("/reply.do")) {
+			command = new BDReplyCommand();
 			command.execute(request, response);
 		
 			viewPage = "list.do";
