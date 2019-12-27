@@ -33,8 +33,9 @@ public class BDao {
 		
 		try {
 			con = ds.getConnection();
-			// mvc_board_seq.nextval : auto increment 숫자 자동증가
-			// mvc_board_seq.currval : 현재 value는 1
+			// mvc_board_seq.nextval : 해당 시퀀스의 값을 증가시키고 싶다면,,,,auto increment 숫자 자동증가
+			// mvc_board_seq.currval : 현재 시퀀스를 알고 싶다면,,,,현재 value는 1
+			
 			String query ="insert into mvc_board (bId, bName, bTitle, bContent, bHit, bGroup, bStep, bIndent) values (mvc_board_seq.nextval, ?, ?, ?, 0, mvc_board_seq.currval, 0, 0 )";
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, bName);
