@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+	#container { 
+		width : 1000px;
+	  	display: grid;
+	  	grid-template-areas: 
+		    "header header header"
+		    "nav article ads"
+		    "nav footer footer";
+	 	grid-template-rows: 60px 1fr 60px;  
+	  	grid-auto-columns: 20% 1fr 15%;
+	  	grid-gap: 10px;
+	  	height: 100vh;
+	  	margin: 0 auto;
+	}
+	
+	@media (max-width : 600px){
+	
+		#container { 
+		max-width : 900px;
+		min-height : 100vh;
+		display: grid;
+		
+		grid-template-areas: 
+		    "header"
+		    "nav"
+		    "article"
+		    "ads"
+		    "footer";
+		grid-template-rows: auto auto 1fr auto auto;  
+		grid-auto-columns: 100%;
+		margin: 0 auto;
+		}
+	}
+	header, footer, article, nav, #siteAds {
+	  padding: 20px;
+	  background: gold;
+	}
+	#pageHeader {
+	  grid-area: header;
+	}
+	#pageFooter {
+	  grid-area: footer;
+	}
+	#mainArticle { 
+	  grid-area: article;      
+	}
+	#mainNav { 
+	  grid-area: nav; 
+	}
+	#siteAds { 
+	  grid-area: ads; 
+	}
+</style>
+</head>
+<body>
+	<div id = "container">	
+		<header id = "pageHeader" > Header</header>
+		<article id = "mainArticle">Article</article>
+		<nav id = "mainNav">Nav</nav>
+		<div id = "siteAds">Ads</div>
+		<footer id = "pageFooter">Footer</footer>
+	</div>
+</body>
+
+</html>
