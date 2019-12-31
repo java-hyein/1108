@@ -1,70 +1,105 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<meta charset="EUC-KR">
-	<title>media Cafe Test</title>
-	</head>
-	<style>
+		<meta charset="EUC-KR">
+		<title>cafe</title>
+	<style type="text/css">
 		*{
 			margin : 0;
 			padding : 0;
 		}
-		#container{
+		
+		#container {
 			width : 1000px;
+			margin:0 auto;
 			border : 1px solid gray;
-			margin : 0 auto;
 		}
-		header {
-			width : 100%;
-			height:500px;
+		#intro, #choice, #map {
+		    -webkit-box-sizing: border-box;
+		    box-sizing: border-box;
+		    clear: both;
+		    position: relative;
+		    width: 100%;
+		    height: 420px;
+		    padding: 15px 2% 10px 5%;
+		}
+		header{
+			height: 500px;
 			background: url(img/header.jpg) center no-repeat;
-			background-size: cover;
-			margin:0;
+			background-size : cover;
 		}
-		header nav{
-			height : 50px;
-			background-color : black;
-		}
-
-		li {
-			float : left;
-			list-style :none;
-			padding : 20px;
+		nav {
+			height: 50px; 
+			background :black; 
 		}
 		
-		a {
-			color : white;
-			text-decoration : none;
-			font-size : 0.8em;
+		#main-nav {
+			padding : 10px;
 		}
-		#intro, #map, #choice {
-			width : 100%;
-			height:400px;
+		
+		li {
+			list-style : none;
+			float: left;
+			font-size:0.8em;
+			line-height: 2px;
+			margin : 18px 15px;
+		}
+
+		a{
+			text-decoration : none;
+			color : white;
+		}
+		
+		p {
+			font-size : 1.3em;
+			line-height:2.5;
+		}
+		#intro, #map, #choice{
+			border :1px solid red;
+			width: 100%;
+			height : 420px;
 			padding : 15px 2% 10px 5%;
+		}
+		#intro .photo {
+			float:left;
+			margin-right: 5%;
+			
 		}
 		.page-title {
 			padding : 30px 50px;
 		}
-		h1 {
-			font-size : 1.8em;
+		
+		/* .content{
+			border :1px solid blue;
+			margin : 80px auto 10px;
+			width : 90%;
+			padding :20px;
+			box-sizing: border-box;
+		} */
+		#intro .photo, #map .photo{
+			float:left;
+			margin-right:5%;
 		}
-		#intro .photo {
-			margin-right: 5%;
+		.photo {
+			width : 42%;
+			display:block;
+		}
+		.photo > img{
+			width: 100%;
+			max-width : 320px;
+			height: auto;
+			margin-bottom : 30px;
+		}
+		#intro .text, #map .text,  {
 			float:left;
 		}
-		
-		.text{
-			
-			float:left;
-		}
-		
-		p {
-			font-size: 1.3em;
-    		line-height: 2.5;
+		.text {
+			width : 42%;
 		}
 	</style>
+	</head>
 	<body>
-		<div id="container">
+	<div id="container">
 			<header>
 				<nav>
 					<ul id="main-nav">
