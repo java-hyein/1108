@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class= "container">
+			<p class= "text-muted"> text-muted 색상</p>
+			<p class= "text-primary"> text-primary 색상</p>
+			<p class= "text-success"> text-success 색상</p>
+			<p class= "text-info"> text-info 색상</p>
+			<p class= "text-warning"> text-warning 색상</p>
+			<p class= "text-danger"> text-danger 색상</p>
+			<p class= "text-dark"> text-dark 색상</p>
+			<p class= "text-body"> text-body 색상</p>
+			<p class= "text-white"> text-white 색상</p>
+			
+			<p class= "text-white bg-primary"> text-white bg-primary 색상</p>
+			<p class= "text-white bg-success"> text-white bg-success 색상</p>
+			<p class= "text-white bg-info"> text-white bg-info 색상</p>
+		</div>
+	
+	<hr>
+		<div class= "container">
+			<ul>
+				<li>list1</li>
+				<li>list2</li>
+				<li>list3</li>
+			</ul>
+		<hr>
+			<ul class= "list-unstyled">
+				<li>list-unstyled</li>
+				<li>list-unstyled</li>
+				<li>list-unstyled</li>
+			</ul>
+			
+			<ul class= "list-inline">
+					<li class= "list-inline-item">list-inline-item</li>
+					<li class= "list-inline-item">list-inline-item</li>
+					<li class= "list-inline-item">list-inline-item</li>
+				</ul>
+		</div>
+		<hr>
+		
+		
+		<div class= "container">
+		<p>hhhhhh jjjjjjj kkkkk</p>
+		<!-- 글자 크기를 아예 같게 맞춰버린다. -->
+		<p class = "text-monospace">hhhhhh jjjjjjj kkkkk</p>
+		</div>
+		
+		<div class= "container">
+			<p>기본문자열</p>
+			<p class ="font-weight-bold">굵은문자열</p>
+			<p class ="font-italic">기울어진 문자열</p>
+			<p class ="font-weight-light">가늘어진 문자열</p>
+			<p class ="font-weight-normal">기본 굵기 문자열</p>
+		<hr>
+			<p class= "text-left">왼쪽 문자열</p>
+			<p class= "text-center">가운데 문자열</p>
+			<p class= "text-right">오른쪽 문자열</p>
+		<hr>
+			<p class= "text-sm-center">문자열</p>
+			<p class= "text-md-center">문자열</p>
+			<p class= "text-lg-center">문자열</p>
+			<p class= "text-xl-center">문자열</p>
+		<hr>
+			<!-- text-justify : 공간에 가득차게 만들어 줌  -->
+			<p style ="width : 200px; border : 1px solid blue" class = "text-justify">
+				A BB CC DDD RRRR GGGG YYYYY ZZZZZ KKKKKKK TTTTTTTTT
+			</p>
+			
+			<p style ="width : 200px; border : 1px solid black">
+				A BB CC DDD RRRR GGGG YYYYY ZZZZZ KKKKKKK TTTTTTTTT
+			</p>
+			
+			<p style ="width : 200px; border : 1px solid red" class = "text-nowrap">
+				A BB CC DDD RRRR GGGG YYYYY ZZZZZ KKKKKKK TTTTTTTTT
+			</p>
+		</div>
+		
+		<pre><!-- 눈에 보이는 대로 출력된다 -->
+			                 학교 종이 땡땡
+			어서모이자!
+		</pre>
+		<p>복사는 <kbd>ctrl +c</kbd> 입니다.</p>
+		 	<hr>
+	
+	<!--====================================================================== -->
+			<!-- 부트스르랩이 제공하는 다양한 문자 태그 -->
+		<div class= "container">
+			<h1>h1 제목</h1>
+			<h2>h2 제목</h2>
+			<h3>h3 제목</h3>
+			<h4>h4 제목</h4>
+			<h5>h5 제목</h5>
+			<h6>h6 제목</h6>
+			<hr>
+			<h1 class= "display-1">Display1 제목</h1>
+			<h1 class= "display-2">Display2 제목</h1>
+			<h1 class= "display-3">Display3 제목</h1>
+			<h1 class= "display-4">Display4 제목</h1>
+			
+			<p class= "display-4"> p Display 입니다 - p 태그도 display 가능!</p>
+		</div>
+		
+		<!--====================================================================== -->
+		<div class= "container">
+			<div class = "row">
+				<div class="col-6" style= "background-color:skyblue">col-6</div>
+				<div class="col-6"style= "background-color:gray">col-6</div>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<div class= "container">
+			<div class = "row">
+				<div class="col-sm-6" style= "background-color:skyblue">col-sm-6</div>
+				<div class="col-sm-6"style= "background-color:gray">col-sm-6</div>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<div class= "container">
+			<div class = "row">
+				<div class="col-md-6" style= "background-color:skyblue">col-md-6</div>
+				<div class="col-md-6"style= "background-color:gray">col-md-6</div>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<div class= "container">
+			<div class = "row">
+				<div class="col-lg-6" style= "background-color:skyblue">col-lg-6</div>
+				<div class="col-lg-6"style= "background-color:gray">col-lg-6</div>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<div class= "container">
+			<div class = "row">
+				<div class="col-xl-6" style= "background-color:skyblue">col-xl-6</div>
+				<div class="col-xl-6"style= "background-color:gray">col-xl-6</div>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<div class= "container">
+			<div class = "row">
+				<div class="col-sm-2" style= "background-color:skyblue">col-sm-2</div>
+				<div class="col-sm-10"style= "background-color:gray">col-sm-10</div>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<div class= "container">
+			<div class = "row">
+				<div class="col-sm-2" style= "background-color:skyblue">col-sm-2</div>
+				<div class="col-sm-4"style= "background-color:gray">col-sm-4</div>
+				<div class="col-sm-4" style= "background-color:skyblue">col-sm-4</div>
+				<div class="col-sm-2"style= "background-color:gray">col-sm-10</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

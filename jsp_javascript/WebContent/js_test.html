@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script type ="text/javascript">
+		/* var book = {
+			name : "Nature of Code",
+			price : "30000DNJS",
+			author : "다니엘 쉬프만",
+			ISBN : "9788968481901",
+			pages : "620페이지"
+		}; */
+		
+		/*function Product(name,weight){
+			this.name = name;
+			this.weight = weight;
+			this.calculate = function(price){
+				return this.weight * price + "원"
+			}
+		};
+		
+		var pork = new Product("돼지삼겹살", "600")
+		console.log("이름  : " + pork.name);
+		console.log("무게 : " + pork.weight + "g");
+		console.log("가격 : " + pork.calculate(2)); */
+		
+		 function Product(){
+			var name = "돼지삼겹살";
+			var price = 0;
+			var weight = 0;
+			
+			
+			this.calculator = function(){
+				return (this.price * this.weight);
+			};
+			
+			this.getPrice = function (){
+				return this.price;
+			};
+			
+			this.setPrice = function(price){
+				if(!isNaN(price)){
+					this.price = price;
+					}else {
+						console.log("price is NaN");
+					};
+			};
+			
+			this.getWeight = function (){
+				return this.weight;
+			};
+			
+			this.setWeight = function(weight){
+				if(!isNaN(weight)){
+					this.weight = weight;
+					}else {
+						console.log("weight is NaN");
+					};
+			};
+			
+			console.log("이름 : " + name);
+		}
+		
+		var myPrice = new Product()
+		myPrice.setPrice(1690);
+		myPrice.setWeight(2);
+		
+		console.log("무게 : " + myPrice.weight * 100 +"g");
+		console.log("가격 : " + myPrice.calculator());
+	</script>
+	</head>
+	<body>
+	</body>
+</html>
