@@ -447,11 +447,269 @@
 		console.log("*")
 	}, 2000); */
 
-	  var varEval = "console.log('eval 함수!')";
+	/*   var varEval = "console.log('eval 함수!')";
 	 eval(varEval);
 	 
 	 varEval = "document.write('<p>eval함수</p>');";
-	 eval(varEval);
+	 eval(varEval); */
+	 
+	/*  var objCar = {
+			 width : "3m",
+			 height: "2m",
+			 cc : "2000cc",
+			 energy :"100",
+			 speed : function(power){
+				 return this.energy * power;
+			 }
+	 };
+	 console.log("objCar.speed : " + objCar.speed(2)); */
+	 
+/* 	 var objName = {
+		nation :"korea",
+	 	capital : "seoul",
+	 	language: "hangeul",
+	 	population : 51000000,
+	 	nationalAnthem : function(){
+	 		console.log("play korean national anthem~");
+	 	}
+	 };
+	 console.log("objName.nation : " + objName.nation);
+	 console.log("objName.population : " + objName.population);
+	 
+	 console.log("objName.[\"nation\"] : " + objName["nation"]);
+	 console.log("objName.[\"population\"] : " + objName["population"]);
+	 
+	 objName.nationalAnthem(); */
+	 
+/*  	 var objCar = {
+			 width : "3m",
+			 height: "2m",
+			 cc : "2000cc",
+			 energy :"100",
+			 speed : function(power){
+				 return this.energy * power;
+			 }
+	 };
+	 
+	 var print = "";
+	 for(var key in objCar){
+		 //if(typeof objCar[key] == "function") continue;
+		 print +=key + ":" + objCar[key] +"\n"
+	 }
+	 
+	 console.log(print);  */
+	 
+	/*  var objName = {
+			 name : "Lee sun sin",
+			 nation : "korea",
+			 gender : "men",
+			 character :"good"
+	 };
+	 
+	 console.log("nation" in objName);
+	 console.log("age" in objName);
+	 
+	 with(objName) {
+		 console.log("name:" + name);
+		 console.log("nation:" + nation);
+		 console.log("gender:" + gender);
+		 console.log("character :" + character);
+	 } */
+	 
+	 /* function createCar(name, color,speed){
+		var carObj = {
+			name : name,
+			color : color,
+			speed : speed,
+			run : function(){
+				return this.speed + "Km/h";
+			}
+		};
+		return carObj;
+	 };
+	 
+	 var sorento = createCar("SORENTO", "BLACK", "220");
+	 console.log("Sotento.name : " + sorento.name);
+	 console.log("Sotento.run : " + sorento.run());
+	 console.log("Sotento.color : " + sorento.color); */
+	 
+	 /* function Airplane(name, color, speed){
+		 this.name = name;
+		 this.color= color;
+		 this.speed = speed;
+		 this.fly = function(){
+			 return this.speed +" fly";
+		 };
+	 };
+	 
+	 var boeing747 = new Airplane("boeing747", "white/blue", "600km/h")
+	 console.log("boeing747.name : "+ boeing747.name);
+	 console.log("boeing747.color : "+ boeing747.color);
+	 console.log("boeing747.fly : "+ boeing747.fly()); */
+	 
+/* 	 //prototype
+	 function Scoring(player, scoreFirst, scoreSecond, scoreThird){
+		 this.player = player;
+		 this.scoreFirst = scoreFirst;
+		 this.scoreSecond = scoreSecond;
+		 this.scoreThird = scoreThird;
+	 };
+	 
+	 Scoring.prototype.getTotal = function(){
+		 return scoreFirst + scoreSecond + scoreThird;
+	 };
+	 
+	 Scoring.prototype.getAvg = function(){
+		 return (getTotal()/3).toFixed(3);
+		 //toFixed() 메서드는 고정 소수점 표현법
+		 //toFixed(3) : xx.123 까지 표현
+	 }; */
+/*	 
+	  function BMICalculator(){
+		var height = 0;
+		var weight = 0;
+		
+		this.bmi = function(){
+			return (this.weight / (this.weight * this.height)).toFixed(2);
+		};
+		
+		this.getHeight = function(){
+			return this.height;
+		};
+		
+		this.setHeight = function(height){
+			if(!isNaN(height)){
+				this.height= height;
+			}else {
+				console.log("height is NaN");
+			};
+		};
+		
+		this.getWeight = function(){
+			return this.weight;
+		}
+		
+		this.setWeight = function(weight){
+			if(!isNaN(weight)){
+				this.weight= weight;
+			}else {
+				console.log("weight is NaN");
+			};
+		};
+		
+	 }
+	 
+	 var myBMI = new BMICalculator();
+	 myBMI.setHeight(1.9);
+	 myBMI.setWeight(90);
+	 console.log("myBMI : " + myBMI.bmi()); */
+	 
+/* 		 var strEn = "ABCDEFE";
+		 var strKo = "가나다라마사아";
+		 String.prototype.temp = 123;
+	 
+	 	console.log("strEn : " + strEn);
+		console.log("strKo : " + strKo);
+		
+		console.log("strEn.length : " + strEn.length);
+		console.log("strKo.length : " + strKo.length);
+		
+		console.log("strEn.constructor : " + strEn.constructor);
+		console.log("strKo.constructor : " + strKo.constructor);
+		
+		console.log("strEn.temp : " + strEn.temp);
+		console.log("strKo.temp : " + strKo.temp);
+		
+		console.log("charAt() : " + strEn.charAt(3));
+		console.log("indexOf() : " + strEn.indexOf("E"));
+		console.log("lastIndexOf() : " + strEn.lastIndexOf("E"));
+		console.log("concat() : " + strEn.concat("abcedf"));
+		console.log("replace() : " + strEn.replace("A", "a"));
+		console.log("split() : " + strEn.split("C"));
+		console.log("slice() : " + strEn.slice(2, 4));
+		console.log("substring() : " + strEn.substring(1, 4));
+		
+		var lc = strEn.toLowerCase();
+		console.log("lc : " + lc);
+		var up = lc.toUpperCase();
+		console.log("up : " + up);
+		
+		//Object객체
+		function ObjName() {
+			this.pro = "property";
+			this.met = function met(){};
+		};
+		
+		ObjName.prototype.temp = 123;
+		
+		var obj = new ObjName();
+		console.log("obj.constructor : " + obj.constructor);
+		console.log("obj.temp : " + obj.temp); */
+		
+/* 		var num1 = 123.456;
+		var num2 = -123.456;
+		var num3 = 3;
+		
+		console.log("Math.PI", Math.PI);
+		console.log("Math.abs()", Math.abs(num2));
+		console.log("Math.max()", Math.max(num1, num2));
+		console.log("Math.min()", Math.min(num1, num2));
+		//3의 3제곱근
+		console.log("Math.pow()", Math.pow(num3, 3));
+		console.log("Math.random()", Math.random());
+		//올림
+		console.log("Math.ceil()", Math.ceil(num1));
+		console.log("Math.floor()", Math.floor(num1));
+		console.log("Math.round()", Math.round(num1));
+		//루트
+		console.log("Math.sqrt", Math.sqrt(3)); */
+		
+		/* var objDate1 = new Date(); //시스템 날짜를 이용한 객체생성
+		var objDate2 = new Date(2020, 01, 02);
+		var objDate3 = new Date(2020, 01, 02, 10, 10,10,100);
+		
+		console.log(objDate1);
+		console.log(objDate2);
+		console.log(objDate3);
+		
+		//1900년도 기준 (1900 + objData1.getYear())
+		console.log("objData1.getYear : " + objDate1.getYear());
+		console.log("objData1.getYear : " + (objDate1.getYear() + 1900));
+		//권장 메서드 : getFullYear () / setFullYear()
+		console.log("objData1.getFullYear : " + objDate1.getFullYear());
+		//권장 메서드 : getMonth () / setMonth()
+		console.log("objData1.getMonth : " + objDate1.getMonth());
+		//권장 메서드 : getDate () / setDate()
+		console.log("objData1.getDate : " + objDate1.getDate());
+		//권장 메서드 : getDay () / setDay()
+		console.log("objData1.getDay : " + objDate1.getDay()); */
+		
+		/* var varArr1 = new Array("박용택", "이승엽", "정상호", "한기주", "장원삼");
+		var varArr2 = new Array("손승락", "이호준", "박세웅", "해커", "윤호슬");
+		
+		var varArr3 = new Array(1, 6, 3, 5, 4, 2);
+		
+		console.log("varArr1.length",varArr1.length);
+		//배열을 문자열로
+		console.log("varArr1.join",varArr1.join());
+		console.log("varArr1",varArr1);
+		console.log("varArr1.reverse()",varArr1.reverse());
+		//한글 정렬
+		console.log("varArr1.sort",varArr1.sort());
+		console.log("varArr1.slice()",varArr1.slice(1,3));
+		console.log("varArr1.concat",varArr1.concat(varArr2));
+		console.log("varArr2.reverse()",varArr2.reverse());
+		//오름차순, 내림차순
+		console.log("varArr3.sort(a-b)",varArr3.sort(function(a,b){return a-b}));
+		console.log("varArr3.sort(b-a)",varArr3.sort(function(a,b){return b-a})); */
+		
+ 		alert("window object");
+		window.alert("window object");
+		
+		console.log("window object");
+		window.console.log("window object");
+		//웹 브라우저를 width, height 사이즈로 열어줌 
+		window.open("http://www.google.com", "openWindow", "width=500 height=300");
 </script>
 </head>
 <body>
