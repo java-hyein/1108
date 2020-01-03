@@ -701,18 +701,216 @@
 		console.log("varArr2.reverse()",varArr2.reverse());
 		//오름차순, 내림차순
 		console.log("varArr3.sort(a-b)",varArr3.sort(function(a,b){return a-b}));
-		console.log("varArr3.sort(b-a)",varArr3.sort(function(a,b){return b-a})); */
-		
-		//BOM
+		console.log("varArr3.sort(b-a)",varArr3.sort(function(a,b){return b-a})); 
+		 */
+/* 		//BOM
  		alert("window object");
 		window.alert("window object");
 		
 		console.log("window object");
 		window.console.log("window object");
 		//웹 브라우저를 width, height 사이즈로 열어줌 
-		window.open("http://www.google.com", "openWindow", "width=500 height=300");
+		window.open("http://www.google.com", "openWindow", "width=500 height=300"); */
+		
+/* 		//window 객체
+		var newWindow = window.open("http://www.google.com", "openWindow", "width=500 height=600");
+		//위치 조정
+		newWindow.moveTo(50,50);
+		for (var i = 0; i < 1000; i++) {
+			newWindow.moveBy(1,1);
+		}
+		//사이즈 조정
+		newWindow.resizeTo(500,600);
+		for (var i = 0; i < 200; i++) {
+			newWindow.resizeBy(-1,-1);
+		} */
+		
+/* 		window.onload = function(){
+			console.log("First!");
+		}; */
+		
+/* 		//screen 객체
+		function openWin(url, width, height) {
+			
+				console.log("screen.width : " + screen.width);
+				console.log("screen.height : " + screen.height);
+				
+				var left = screen.width/2 - width/2;
+				var top = screen.height/2 - height/2;
+				var opt = "width = " + width + ", height = " + height + ", left = " + left + ", top = " + top;
+				
+				console.log("opt : " + opt);
+				open(url, "newWin", opt);
+			
+			}
+			openWin("https://www.naver.com", 800, 500); */
+/* 			
+			//location 객체 
+			window.onload = function(){
+				//href : 바로 창으로 띄우는 실행
+				location.href = "http://www.naver.com";
+				//히스토리 남김 - 기능은 똑같음
+				location.assign("http://www.naver.com");
+				//히스토리 안 남김
+				location.replace("http://www.naver.com");
+			}  */
+			
+/* 			//텍스트 노트
+			window.onload = function(){
+				//P 태그
+				var elementNode = document.createElement("p");
+				// 내용 text
+				var textNode = document.createTextNode("Javascript & Node.js");
+				
+				//P 태그안에 textNode의 내용을 넣는다
+				elementNode.appendChild(textNode);
+				//P태그와 textNode의 내용을 body에 넣는다.
+				document.body.appendChild(elementNode);
+			} */
+			
+/* 			window.onload = function(){
+				var imgNode = document.createElement("img");
+				imgNode.setAttribute("src","./img/img03.png");
+				imgNode.setAttribute("width", 200);
+				imgNode.setAttribute("height",200);
+				imgNode.setAttribute("tempData","logoImg");
+				
+				document.body.appendChild(imgNode);
+			}; */
+			
+			//innerHTML
+			//body안에 string 값을 바로 넣는다.
+/* 			window.onload = function(){
+				var str = "";
+				str += "<p>Javascript & Node.js</p>";
+				str += "<img src = './img/img03.png',";
+				str += "width = '170',height='67',tempData ='image03'>";
+				
+				document.body.innerHTML = str;
+			}; */
+			
+			
+			//id 속성값을 이용해서 객체 선택하기 : document.getElementById("id속성값");
+			
+			/* window.onload = function(){
+				var str = "";
+				str += "<p id = 'jsTitle'> Javascript & Node.js</p>";
+				str += "<img id ='logImg',src='./img/img03.png',";
+				str += "width = '170',height='67',tempData ='image03'>";
+				
+				document.body.innerHTML = str;
+				
+				var titleNode = document.getElementById("jsTitle");
+				titleNode.innerHTML = "JS & NODE";
+				
+				var logoimg = document.getElementById("logImg");
+				logoimg.setAttribute("src", "./img/img02.png");
+				logoimg.setAttribute("width" , 297);
+				logoimg.setAttribute("height", 124);
+			};*/
+			 
+/* 			window.onload = function(){
+				var str = "";
+				str += "<p id = 'jsTitle'> Javascript & Node.js</p>";
+				str += "<img id ='logImg',src='./img/img03.png',";
+				str += "width = '170',height='67',tempData ='image03'>";
+				
+				document.body.innerHTML = str;
+				
+				var titleNode = document.getElementById("jsTitle");
+				titleNode.parentNode.removeChild(titleNode);
+				
+				var logoNode = document.getElementById("logImg");
+				logoNode.parentNode.removeChild(logoNode);
+			}; */
+			
+/* 			window.onload = function(){
+				var str = "";
+				str += "<p id = 'jsTitle'> Javascript & Node.js</p>";
+				str += "<img id ='logImg', src='./img/img02.png'>";
+				
+				document.body.innerHTML = str;
+				
+				var titleNode = document.getElementById("jsTitle");
+				titleNode.style.fontSize = "1.2em";
+				titleNode.style.border = "1px solid #ff0000";
+				
+				var logoNode = document.getElementById("logImg");
+				logoNode.style.width = "170px";
+				logoNode.style.height = "67px";
+			}; */
+			//인라인 모델
+/* 			 function headerClick(){
+				console.log("click!");
+			}  */
+			
+			//이벤트 제거
+			/* var ce = document.getElementById("cEvent");
+			console.log(ce);
+			ce.onclick = null; */
+			
+			/* //기본 모델
+			window.onload = function(){
+				var ce = document.getElementById("cEvent");
+				
+				ce.onclick = function(){
+					console.log("클릿");
+				}
+			};	
+ */
+ 
+ 	/* //표준 핸들러
+ 	window.onload = function(){
+	 function addHandler(){
+		 console.log("클리쿠");
+	 };
+	 
+	 function removeHandler(){
+		 console.log("이벤트 삭제");
+		 ceA.removeEventListener("click", addHandler, false);
+	 };
+	 
+	 var ceA = document.getElementById("cEventAdd");
+	 ceA.addEventListener("click", addHandler,false);
+	 
+	 var ceR = document.getElementById("cEventRemove");
+	 ceR.addEventListener("click", removeHandler,false);
+	 
+ } */
+ 
+ 	//this
+ 	
+ 	
+			
 </script>
+ <style>
+	#cEventAdd {
+		width: 200px; 
+		height: 200px;
+		background-color :skyblue;
+	}
+	
+	#cEventRemove {
+		width: 200px; 
+		height: 200px;
+		background-color :pink;
+	}
+</style>
 </head>
 <body>
+<!-- 	<div id = "cEventAdd">click event</div>
+	<div id = "cEventRemove">remove event</div> -->
+	<!-- <div id = "cEvent"><!--click event </div> -->
+
+<!-- <div id = "cEvent" onClick="headerClick();">click event </div> -->
+	<!-- location object -->
+<!-- 	<script>
+	console.log("Second!");
+	</script>
+	
+	<script>
+	console.log("Third!");
+	</script> -->
+	
 </body>
 </html>
