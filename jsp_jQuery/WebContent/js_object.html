@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>jQuery Object</title>
+		<script src= "http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			/* //$( ) 문서 객체 생성
+			$(document).ready(function(){
+				
+				//wrap의 객체 생성
+				var wrapObj = $("#wrap");
+				
+				//<div>객체 생성 및 추가
+				 var divObj = $("<div> hello jQuery </div>");
+				divObj.appendTo(wrapObj);
+				divObj.css("background","#ff0000");
+				//위와 아래가 같음. 하지만 가독성을 생각해서라도 위에 태그 사용 지향
+				/* var divObj = $("<div> hello jQuery </div>").appendTo(wrapObj).css("background","#ff0000"); */
+				
+				/* //<a>객체 생성 및 추가
+				var aObj = $("<a href='http://www.google.com' target='_blank'> google</a><br>");
+				aObj.appendTo(wrapObj);
+				
+				//<img>객체 생성 및 추가
+				var imgObj = $("<img src ='img/img03.png'><br>");
+				imgObj.appendTo(wrapObj);
+				
+				// <img>, 속성 객체 생성 및 추가
+				var tempObj = {
+						src : "img/img05.png",
+						width : 297,
+						height : 124,
+						border :"5px"
+				};
+				
+				var imgAObj = $("<img>", tempObj);
+				imgAObj.appendTo(wrapObj);
+			}); */
+//=====================================================================================
+ 			$(document).ready(function(){
+	
+			var wrapObj = $("#wrap");
+	
+			//객체 생성
+			var divObj = $("<div>jqueryjquery</div>");
+			//객체 삽입
+			
+				divObj.appendTo(wrapObj);		//.appendTo() <후>
+				//wrapObj.append(divObj);		//.append() <후>
+				//divObj.prependTo(wrapObj);	//.prependTo() <전>
+				//wrapObj.prepend(divObj);		//.prepend() <전>
+			//객체 추가
+				//divObj.insertAfter(wrapObj);	//.insertAfter() <후>
+				//wrapObj.after(divObj);		//.after() <후>
+				//divObj.insertBefore(wrapObj);	//.insertBefore() <전>
+				//wrapObj.before(divObj);		//.before() */ <전>
+ 			});		
+//=====================================================================================	
+	
+		//객체 이동
+		/* $(document).ready(function(){
+			$("#wrap > .contents1 > .p").appendTo($("#wrap > .contents2"));
+		}); */
+
+//=====================================================================================	
+	
+		/* //객체 복제
+		$(document).ready(function(){
+			$("#wrap > .contents1 > .p").clone().appendTo($("#wrap > .contents1"));
+		});
+		 */
+		</script>
+		<!-- <style>
+			#wrap .contents1 .p{
+				background : #ff0000;
+			}
+			
+			/* #wrap .contents2 .p{
+				background : #ffff00;
+			} */
+		</style> -->
+		
+	</head>
+	<body>
+		<!-- <div id ="wrap">
+			<div class ="contents1">
+				<p class ="p">contents1</p>
+			</div> -->
+			
+			<!-- <div class ="contents2">
+				<p class ="p">contents2</p>
+			</div> 
+			</div>-->
+		<div id ="wrap">
+			<div>contents</div>
+		</div>
+	</body>
+</html>

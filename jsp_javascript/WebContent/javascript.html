@@ -878,28 +878,51 @@
 	 
  } */
  
- 	//this
+ 	/* //event -> ¿Ã∫•∆Æ ∞¥√º
+ 	window.onload = function(){
+ 	function addHandler(e){
+ 		console.log("click");
+ 		console.log("this : "+ this);
+ 		
+ 		var event = e || window.event;
+ 		for ( var key in event) {
+			console.log(key + ":" + event[key]);
+		}
+ 	}
+ 	
+ 	var objD = document.getElementById("objDiv");
+ 	objD.addEventListener("click",addHandler,false);
+ 	
+ 	var objP = document.getElementById("objPar");
+ 	objP.addEventListener("click",addHandler,false);
+ 	
+ 	}; */
+ 
  	
  	
 			
 </script>
-<!--  <style>
-	#cEventAdd {
+  <style>
+	#objDiv {
 		width: 200px; 
 		height: 200px;
 		background-color :skyblue;
 	}
 	
-	#cEventRemove {
+	#objPar {
 		width: 200px; 
 		height: 200px;
 		background-color :pink;
 	}
-</style> -->
+</style>
 </head>
 <body>
-<!-- 	<div id = "cEventAdd">click event</div>
-	<div id = "cEventRemove">remove event</div> -->
+	div id = "objDiv">object Division</div>
+	<div id = "objPar">object Paragraph</div>
+	
+	<!-- <div id = "cEventAdd">click event</div>
+	<div id = "cEventRemove">remove event</div>  -->
+	
 	<!-- <div id = "cEvent"><!--click event </div> -->
 
 <!-- <div id = "cEvent" onClick="headerClick();">click event </div> -->

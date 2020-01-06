@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	/* //표준 마우스 이벤트 
+		window.onload = function() {
+			var me = document.getElementById("mouseEvent");
+			me.addEventListener("click", function() {
+				console.log("click event!!");
+			}, false); //이벤트 
+	
+			me.addEventListener("mouseover", function() {
+				console.log("mouseover event!!");
+			}, false);
+	
+			me.addEventListener("mouseout", function() {
+				console.log("mouseout event!!");
+			}, false);
+	
+			me.addEventListener("mousemove", function(e) {
+				console.log("mousemove event!!");
+				//console.log("x : " + e.clientX + ", y : " + e.clientX);
+			}, false);
+	
+			me.addEventListener("mousedown", function(e) {
+				console.log("mousedown event!!");
+			}, false);
+	
+			me.addEventListener("mouseup", function(e) {
+				console.log("mouseup event!!");
+			}, false);
+	
+			me.addEventListener("dblclick", function(e) {
+				console.log("dblclick event!!");
+			}, false);
+		} */
+		//자바스크립트로 input 창 제어
+		//return으로 제어
+		window.onload = function() {
+			var sbmBtn = document.getElementById("sbmBtn");
+			sbmBtn.onclick = function(){
+				if(document.getElementById("uId").value == ""){
+					alert("user id is blank");
+					return false;
+				}else if (document.getElementById("uPw").value == ""){
+					alert("user pw is blank");
+					return false;
+				}else {
+					alert("login ok");
+					return true;
+				}
+			};
+			var resBtn = document.getElementById("resBtn");
+			resBtn.onclick = function(){
+					alert("reset ok");
+					return true;
+			};	
+		}
+		
+</script>
+	<style>
+		/* #mouseEvent {
+			width: 200px;
+			height: 100px;
+			line-height: 100px;
+			text-align: center;
+			font-size: 1.2em;
+			background-color: #f00;
+			color: #fff;
+			font-weight: bolder;
+		} */
+	</style>
+	</head>
+<body>
+	<!-- <div id="mouseEvent">mouse event</div> -->
+	<form id = "loginForm" action ="http://www.google.com">
+		USER ID : <input id = "uId" type ="text" name ="uId"><br>
+		USER PW : <input id = "uPw" type ="password" name ="uPw"><br>
+		<input id = "sbmBtn" type = "submit" value="submit">
+		<input id = "resBtn" type = "reset" value="reset">
+	</form>
+</body>
+
+</html>
