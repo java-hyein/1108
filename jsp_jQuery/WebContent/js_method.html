@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script src= "http://code.jquery.com/jquery-latest.min.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			//each()    배열  <- for문
+			//모든 P를 배열로 관리한다. 
+			//index 는 0부터 시작
+			$("p").each(function(index,item){ // index : p배열의 인덱스 , item : p태그 객체
+				console.log($(item).text()); //text() <- p 태그 내용 출력
+				if(index % 2 == 0) {
+					$(item).css("background","skyblue");
+				}else {
+					$(item).css("background","#cccccc");
+				}
+			});	
+/* =========================================================================================== */
+			
+			//html() / text
+			console.log("htmlMethod : " + $("#htmlMethod").html())//.html() <- 태그 내용 뿌려줌
+			$("#htmlMethod").html("<strong>new </strong>"+ $("#textMethod").html());
+			
+			console.log("textMethod : " + $("#textMethod").text())//<- text() 단순 text를 리턴한다
+			$("#textMethod").text("new "+ $("#textMethod").text());
+/* =========================================================================================== */
+			//addClass() 클래스 속성 추가
+			//removeClass () 클래스 속성 제거
+			
+			$("#addClass").addClass("addCla"); // <- addCla라는 속성 추가
+			//<div id = "addClass" class= "addCla" >addClass() 메서드</div>
+			$(".addCla").css("background", "#ff0000");
+			
+			
+			$(".remCla").css("background","red");
+			$(".remCla").css("background", "skyblue");
+/* =========================================================================================== */
+			//attr() 속성 추가
+			//attr() 속성 검사 (2개 이상인 경우 첫번째 객체 이용)
+			//removeAttr(속성) 속성제거
+			$("#attrMethod img").attr("src", "img/logo.png");
+			console.log("#attrMethod img src : "+ $("#attrMethod img").attr("src"));// 이미지가 갖고 있는 속성 리턴
+			//이미지 삭제
+			$("#attrMethod img").removeAttr("src");
+			console.log("#attrMethod img src : "+ $("#attrMethod img").attr("src"));
+			
+/* =========================================================================================== */
+			//css()	스타일 추가
+			//css()	스타일 검사
+			
+			$("#cssMethod").css("width", "300px").css("height","100px");
+			$("#cssMethod").css("background", "#ff0000");
+			
+			console.log("cssMethod css width : " + $("#cssMethod").css("width"));
+			console.log("cssMethod css height : " + $("#cssMethod").css("height"));
+			console.log("cssMethod css background : " + $("#cssMethod").css("background"));
+/* =========================================================================================== */	
+			//remove()	// 문서 객체 제거 < - 태그 자체 삭제함
+			//empty()	// 문서 객체 내부 제거 <- 안에 있는 텍스트를 날려버림
+			$("#removeMthod").remove();
+			$("#emptyMthod").empty();
+			
+			});
+		
+	</script>
+	</head>
+	<body>
+		<p>Hello javascript</p>
+		<p>Hello jQuery</p>
+		<p>Hello node.js</p>
+		
+		<div id = "htmlMethod">html() 메서드</div>
+		<div id = "textMethod">text() 메서드</div>
+		
+		<div id = "addClass">addClass() 메서드</div>
+		
+		<div id = "removeClass" class= "remCla">removeClass() 메서드</div>
+		
+		<div id = "attrMethod">
+			<img>
+			<br>
+			<img>
+		</div>
+		
+		<div id="cssMethod"> CSS METHOD </div>
+		
+		<div id="removeMthod"> Remove Object! </div>
+		<div id="emptyMthod"> Empty Object! </div>
+	</body>
+</html>

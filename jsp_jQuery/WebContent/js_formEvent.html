@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		/* $(document).ready(function(){
+			
+			$("#sbmBtn").click(function(){
+				if($("#uId").val() == 0){
+					alert("user id is blank");
+				}else if ($("#uPw").val() == 0){
+					alert("user pw is blank");
+				}else {
+					alert("login okay");
+					$("#loginForm").submit();
+				}
+			});
+			
+			$("#resBtn").click(function(){
+				alert("reset okay");
+				$("#loginForm")[0].reset();
+			});
+		}); */
+	
+	
+		 $(document).ready(function(){
+			$("#sbmBtn").click(function(event){
+				if($("#uId").val() == 0){
+					alert("user id is blank");
+					event.preventDefault(); // default는 전송. 그래서 prevent 해라 
+				}else if ($("#uPw").val() == 0){
+					alert("user pw is blank");
+					event.preventDefault();
+				}else {
+					alert("login okay");
+				}
+			});
+		}); 
+
+	</script>
+	</head>
+	<body>
+		<form id ="loginForm" action = "http://www.google.com">
+			USER ID : <input id = "uId" type= "text" name ="uId"><br>
+			USER PW : <input id = "uPw" type= "password" name ="uPw"><br>
+			<input id = "sbmBtn" type ="submit" value="SUBMIT">
+			<input id = "resBtn" type ="reset" value="RESET">
+		</form>
+		 
+		 <!-- <form id ="loginForm" action = "http://www.google.com">
+			USER ID : <input id = "uId" type= "text" name ="uId"><br>
+			USER PW : <input id = "uPw" type= "password" name ="uPw"><br>
+			<input id = "sbmBtn" type ="button" value="SUBMIT">
+			<input id = "resBtn" type ="button" value="RESET">
+		</form>  -->
+	</body>
+</html>

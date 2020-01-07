@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+ 	<script src= "http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+		
+		$(document).ready(function(){
+			function eventHandler(){
+				console.log("click");
+				console.log("this : " + this );
+			};
+			
+			for( var key in this) {
+				console.log(key +" : " + event[key]);
+			}
+			
+		}); 
+		
+		
+			/* $("#objDiv").click(eventHandler);
+			$("#objPar").click(eventHandler); */
+	</script>
+	</head>
+	<body>
+		<div id = "objDiv">obj Division</div>
+		<p id = "objPar">obj Paragraph</p>
+	</body>
+</html>
