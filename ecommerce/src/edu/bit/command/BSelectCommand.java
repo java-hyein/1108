@@ -18,9 +18,8 @@ public class BSelectCommand implements BCommand {
 		ArrayList<BDto> dtos = dao.select();
 		//dopost에서 받아온 request, 리스트라는 이름으로 dtos를 보낸다
 		request.setAttribute("select", dtos);
-		
+//=======================================================================
 		ArrayList<DeptDto> depts = dao.dSelect();
-
 		request.setAttribute("dept", depts);
 	}
 

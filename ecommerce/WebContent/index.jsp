@@ -229,17 +229,15 @@
 										</a>
 									</h4>
 								</div>
-							<c:forEach items="${dept}" var="depts">
 								<div id="sportswear" class="panel-collapse collapse">
 									<div class="panel-body">
+							<c:forEach items="${dept}" var="dept">
 										<ul>
-											<li><a href="#">${depts.deptno} </a></li>
-											<li><a href="#">${depts.dname} </a></li>
-											<li><a href="#">${depts.loc} </a></li>
+											<li><a href="#">${dept.dname} </a></li>
 										</ul>
+							</c:forEach>
 									</div>
 								</div>
-							</c:forEach>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">

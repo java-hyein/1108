@@ -233,9 +233,9 @@
 								<div id="sportswear" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="#">${depts.deptno} </a></li>
 											<li><a href="#">${depts.dname} </a></li>
-											<li><a href="#">${depts.loc} </a></li>
+											<li><a href="#">${depts.dname} </a></li>
+											<li><a href="#">${depts.dname} </a></li>
 										</ul>
 									</div>
 								</div>
