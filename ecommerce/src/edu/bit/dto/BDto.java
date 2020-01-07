@@ -1,6 +1,7 @@
 package edu.bit.dto;
 
 import java.sql.Date;
+import java.util.Random;
 
 public class BDto {
 	
@@ -92,7 +93,11 @@ public class BDto {
 		this.deptno = deptno;
 	}
 
-
+	public String getPhoto() {
+		Random random = new Random();
+		int num = random.nextInt(6)+1;
+		return"product" + String.valueOf(num)+".jpg";
+	}
 	
 	
 	

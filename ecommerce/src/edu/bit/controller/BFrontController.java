@@ -66,7 +66,6 @@ public class BFrontController extends HttpServlet {
 			viewPage = "index.jsp";
 			
 		}
-			
 		// 받은 요청을 유저에게 보여준다.
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request,response);

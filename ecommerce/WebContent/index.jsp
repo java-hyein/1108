@@ -225,21 +225,21 @@
 									<h4 class="panel-title">
 										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Sportswear
+											DEPARTMENT
 										</a>
 									</h4>
 								</div>
+							<c:forEach items="${dept}" var="depts">
 								<div id="sportswear" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="#">Nike </a></li>
-											<li><a href="#">Under Armour </a></li>
-											<li><a href="#">Adidas </a></li>
-											<li><a href="#">Puma</a></li>
-											<li><a href="#">ASICS </a></li>
+											<li><a href="#">${depts.deptno} </a></li>
+											<li><a href="#">${depts.dname} </a></li>
+											<li><a href="#">${depts.loc} </a></li>
 										</ul>
 									</div>
 								</div>
+							</c:forEach>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
@@ -363,31 +363,46 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-
-  <c:set var="rand"><%= java.lang.Math.round(java.lang.Math.random() * 6) %></c:set>
-  <img src="" id ="${rand}" alt="" />
+<!-- jstl 방식  -->
+<%--   <c:set var="rand"><%= java.lang.Math.round(java.lang.Math.random() * 6) %></c:set>
+  	<img src="" id ="${rand}" alt="" />
+  	
   <c:choose>
-<c:when test="${rand == 1}">
-<img src="images/home/product1.jpg" alt=""/>
-  </c:when>
-  <c:when test="${rand == 2}">
-     <img src="images/home/product2.jpg" alt=""/>
-     </c:when>
+	<c:when test="${rand == 1}">
+		<img src="images/home/product1.jpg" alt=""/>
+	</c:when>
+	<c:when test="${rand == 2}">
+     	<img src="images/home/product2.jpg" alt=""/>
+	</c:when>
      <c:when test="${rand == 3}">
-     <img src="images/home/product3.jpg" alt=""/>
+     	<img src="images/home/product3.jpg" alt=""/>
      </c:when>
      <c:when test="${rand == 4}">
-     <img src="images/home/product4.jpg" alt=""/>
+     	<img src="images/home/product4.jpg" alt=""/>
      </c:when>
      <c:when test="${rand == 5}">
-     <img src="images/home/product5.jpg" alt=""/>
+     	<img src="images/home/product5.jpg" alt=""/>
      </c:when>
      <c:otherwise>
-     <img src="images/home/product6.jpg" alt=""/>
+     	<img src="images/home/product6.jpg" alt=""/>
      </c:otherwise>
-     </c:choose>
 
+  </c:choose> --%>
 
+<!-- script 방식 -->
+<!--   <script>
+  	var image = new Array();
+  	image[0] = "images/home/product1.jpg";
+  	image[1] = "images/home/product2.jpg";
+  	image[2] = "images/home/product3.jpg";
+  	image[3] = "images/home/product4.jpg";
+  	image[4] = "images/home/product5.jpg";
+  	image[5] = "images/home/product6.jpg";
+  	
+  	var index = Math.floor(Math.random()*(image.length))
+  	document.write("<img src ="+image[index]+">");
+  </script> -->
+											<img src="images/home/${dto.photo}" alt =""/>
 											<h2>${dto.sal}</h2>
 											<p>${dto.ename}</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>

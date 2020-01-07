@@ -12,6 +12,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import edu.bit.dto.BDto;
+import edu.bit.dto.DeptDto;
 
 public class BDao {
 	
@@ -29,7 +30,7 @@ public class BDao {
 	}
 
 	public ArrayList<BDto> select() {
-ArrayList<BDto> dtos = new ArrayList<BDto>();
+		ArrayList<BDto> dtos = new ArrayList<BDto>();
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -60,6 +61,35 @@ ArrayList<BDto> dtos = new ArrayList<BDto>();
 			e.printStackTrace();
 		}
 		return dtos;
+	}
+
+	public ArrayList<DeptDto> dSelect() {
+		ArrayList<DeptDto> depts = new ArrayList<DeptDto>();
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs= null;
+		
+		try {
+			con = ds.getConnection();
+
+			String query ="select * from dept";
+			pstmt = con.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				int deptno = rs.getInt("deptno");
+				String dname = rs.getString("dname");
+				String loc = rs.getString("loc");
+						
+				
+				DeptDto dept = new DeptDto(deptno, dname,loc);
+				depts.add(dept);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return depts;
 	}
 
 	
